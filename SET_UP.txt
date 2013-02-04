@@ -5,8 +5,8 @@ Database = property_cloud
 Connection to database is application/inc/config.inc.php
 
 Admin Login is:
-username: admin
-password: letmein
+username: *******
+password: *******
 
 
 This project was carried out on a mac so localhost = localhost:8888.
