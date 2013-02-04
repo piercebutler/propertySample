@@ -1,0 +1,172 @@
+
+<?php if (isset($flashMessage) && strlen(trim($flashMessage)) > 0 ) : ?>
+
+<div class="alert">
+	<button type="button" class="close" data-dismiss="alert">�</button>
+	<strong>Message</strong>
+	<?php echo $flashMessage ?>
+</div>
+<?php endif;  ?>
+
+<form class="form-horizontal" method="post" action="insert.php" enctype="multipart/form-data" >
+
+<div class="container">
+<div class="whiteBg">
+<br />
+	<h1>Insert Property Listing</h1><br/>
+    
+	<input type="hidden" name="property_id" value="<?php echo $property['property_id']; ?>" />
+	
+
+	<!-- ADDRESS -->
+    <div class="control-group">
+		<label class="control-label" for="inputPropertyArea">Address</label>
+		<div class="controls">
+			<input type="text" id="inputPropertyArea" name="address" placeholder="Address" value="<?php echo $property['address']; ?>">
+		</div>
+	</div>
+    
+    <!-- Address Two-->
+    <div class="control-group">
+		<label class="control-label" for="inputMoviePrice">Address Two</label>
+		<div class="controls">
+			<input type="text" id="inputPropertyAddressTwo" name="address_two" placeholder="Address 2" value="<?php echo $property['address_two']; ?>">
+		</div>
+	</div>
+    
+    <!-- Address Three -->
+    <div class="control-group">
+		<label class="control-label" for="inputMoviePrice">Address Three</label>
+		<div class="controls">
+			<input type="text" id="inputPropertyAddressTwo" name="address_three" placeholder="Address 2" value="<?php echo $property['address_three']; ?>">
+		</div>
+	</div>
+    
+    <!-- COUNTY -->
+    <div class="control-group">
+		<label class="control-label" for="inputMovieTitle">County</label>
+		<div class="controls">
+			<select id="county" name="county">
+				<option value="Antrim"<?php echo output_selected($property['county'],'Antrim') ?>>Antrim</option>
+				<option value="Armagh"<?php echo output_selected($property['county'],'Armagh') ?>>Armagh</option>
+				<option value="Carlow"<?php echo output_selected($property['county'],'Carlow') ?>>Carlow</option>
+				<option value="Cavan"<?php echo output_selected($property['county'],'Cavan') ?>>Cavan</option>
+				<option value="Clare"<?php echo output_selected($property['county'],'Clare') ?>>Clare</option>
+				<option value="Cork"<?php echo output_selected($property['county'],'Cork') ?> >Cork</option>
+                <option value="Donegal"<?php echo output_selected($property['county'],'Donegal') ?> >Donegal</option>
+                <option value="Down"<?php echo output_selected($property['county'],'Down') ?> >Down</option>
+                <option value="Dublin"<?php echo output_selected($property['county'],'Dublin') ?> >Dublin</option>                <option value="Derry"<?php echo output_selected($property['county'],'Derry') ?> >Derry</option>
+                <option value="Fermanagh"<?php echo output_selected($property['county'],'Fermanagh') ?> >Fermanagh</option>
+                <option value="Galway"<?php echo output_selected($property['county'],'Galway') ?> >Galway</option>
+                <option value="Kerry"<?php echo output_selected($property['county'],'Kerry') ?> >Kerry</option>
+                <option value="Kildare"<?php echo output_selected($property['county'],'Kildare') ?> >Kildare</option>
+                <option value="Kilkenny"<?php echo output_selected($property['county'],'Kilkenny') ?> >Kilkenny</option>
+				<option value="Laois"<?php echo output_selected($property['county'],'Laois') ?> >Laois</option>
+                <option value="Leitrim"<?php echo output_selected($property['county'],'Leitrim') ?> >Leitrim</option>
+                <option value="Limerick"<?php echo output_selected($property['county'],'Limerick') ?> >Limerick</option>
+                <option value="Longford"<?php echo output_selected($property['county'],'Longford') ?> >Longford</option>
+                <option value="Louth"<?php echo output_selected($property['county'],'Louth') ?> >Louth</option>
+                <option value="Mayo"<?php echo output_selected($property['county'],'Mayo') ?> >Mayo</option>
+                <option value="Meath"<?php echo output_selected($property['county'],'Meath') ?> >Meath</option>
+                <option value="Monaghan"<?php echo output_selected($property['county'],'Monaghan') ?> >Monaghan</option>
+                <option value="Offaly"<?php echo output_selected($property['county'],'Offaly') ?> >Offaly</option>
+                <option value="Roscommon"<?php echo output_selected($property['county'],'Roscommon') ?> >Roscommon</option>
+                <option value="Sligo"<?php echo output_selected($property['county'],'Sligo') ?> >Sligo</option>
+                <option value="Tipperary"<?php echo output_selected($property['county'],'Tipperary') ?> >Tipperary</option>
+                <option value="Tyrone"<?php echo output_selected($property['county'],'Tyrone') ?> >Tyrone</option>
+                <option value="Waterford"<?php echo output_selected($property['county'],'Waterford') ?> >Waterford</option>
+                <option value="Westmeath"<?php echo output_selected($property['county'],'Westmeath') ?> >Westmeath</option>
+                <option value="Wexford"<?php echo output_selected($property['county'],'Wexford') ?> >Wexford</option>
+                <option value="Wicklow"<?php echo output_selected($property['county'],'Wicklow') ?> >Wicklow</option>
+			</select>
+		</div>
+	</div> <!-- / county -->
+    
+    
+    <!-- NUMBER OF ROOMS -->
+    <div class="control-group">
+		<label class="control-label" for="inputMoviePrice">No. of Bedrooms</label>
+		<div class="controls">
+			<input type="text" id="inputMovieRunningTime" name="rooms" placeholder="Number of Bedrooms" value="<?php echo $property['rooms']; ?>">
+		</div>
+	</div>
+    
+    <!-- GUIDE PRICE --> 
+    <div class="control-group">
+		<label class="control-label" for="inputMoviePrice">Guide Price</label>
+		<div class="controls">
+			<input type="text" id="inputMovieRunningTime" name="price" placeholder="Guide Price" value="<?php echo $property['price']; ?>">
+		</div>
+	</div>
+    
+	<!-- DESCRIPTION -->
+	<div class="control-group">
+		<label class="control-label" for="inputMovieTitle">Description</label>
+		<div class="controls">
+			<textarea name="description" <?php echo $property['description']; ?>></textarea>
+		</div>
+	</div>
+
+    <!-- Contact Name -->
+    <div class="control-group">
+		<label class="control-label" for="inputMoviePrice">Contact Name</label>
+		<div class="controls">
+			<input type="text" id="inputMovieRunningTime" name="contact" placeholder="Contact Name" value="<?php echo $property['contact']; ?>">
+		</div>
+	</div>
+    
+    <!-- Phone Number -->
+    <div class="control-group">
+		<label class="control-label" for="inputMoviePrice">Phone No</label>
+		<div class="controls">
+			<input type="text" id="inputMovieRunningTime" name="phone" placeholder="Phone Number" value="<?php echo $property['phone']; ?>">
+		</div>
+	</div>
+    
+    <!-- Property Status -->
+    <div class="control-group">
+		<label class="control-label" for="inputMovieTitle">Status</label>
+		<div class="controls">
+			<select id="status" name="status">
+				<option value="forsale.png"<?php echo output_selected($property['status'],'forsale.png') ?>>For Sale</option>
+                    <option value="sold.png"<?php echo output_selected($property['status'],'sold.png') ?>>Sold</option>
+            </select>
+		</div>
+	</div>
+    
+    <!-- PROPERTY TYPE -->
+    <div class="control-group">
+		<label class="control-label" for="inputMovieTitle">Property Type</label>
+		<div class="controls">
+			<select id="type" name="type">
+				<option value="Detached"<?php echo output_selected($property['type'],'detached') ?>>Detached</option>
+                <option value="Semi-Detached"<?php echo output_selected($property['type'],'Semi-Detached') ?>>Semi-Detached</option>
+                <option value="Terraced"<?php echo output_selected($property['type'],'Terraced') ?>>Terraced</option>
+                <option value="Apartment"<?php echo output_selected($property['type'],'Apartment') ?>>Apartment</option>
+			</select>
+		</div>
+	</div>
+	
+    <!-- Image Upload -->
+	<div class="control-group">
+		<label class="control-label" for="inputMovieTitle">Upload Image</label>
+		<div class="controls">
+			<input type="hidden" name="MAX_FILE_SIZE" value="2000000" />
+			<input name="uploadedfile" type="file" />
+		</div>
+	</div>
+    
+    <!-- Submit -->
+	<div class="control-group">
+		<div class="controls">
+			<button type="submit" class="btn">
+				<?php echo $buttonLabel ?>
+			</button>
+		</div>
+	</div>
+</div>
+</div> <!-- / container -->
+
+</form>
+
+
