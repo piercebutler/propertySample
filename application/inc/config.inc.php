@@ -9,10 +9,10 @@ defined('MY_APP') or die('Restricted access');
 /*
  * Declare a number of constants that you can change depending on your application
  */
-define("DB_HOST","localhost");
-define("DB_USER","redfinc1_pierce");
-define("DB_PASSWORD","4124113");
-define("DB_DATABASE","redfinc1_property");
+define("DB_HOST","");
+define("DB_USER","");
+define("DB_PASSWORD","");
+define("DB_DATABASE","");
 
 /*
  * Declare a number of constants that you can change depending on your application
